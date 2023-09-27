@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "T3qUlrHX3EEl/75d6mQEGD88zxt78DwpdqfLOfjLsCU=",
+  "Source": "webapi.Health_Clinic",
+  "BasePath": "_content/webapi.Health_Clinic",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
