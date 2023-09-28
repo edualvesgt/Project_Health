@@ -2,7 +2,7 @@
 
 namespace webapi.Health_Clinic.Interfaces
 {
-    public interface IEspecializadadeRepository
+    public interface IEspecialidadeRepository
     {
         List<Especialidade> List();
 
@@ -12,6 +12,6 @@ namespace webapi.Health_Clinic.Interfaces
 
         void Update(Guid id, Especialidade especialidade);
 
-        void Delete(Guid Id);
+        void Delete(Guid id);
     }
 }
