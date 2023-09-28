@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace webapi.Health_Clinic.Migrations
 {
     /// <inheritdoc />
-    public partial class Bd : Migration
+    public partial class V1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,8 +18,8 @@ namespace webapi.Health_Clinic.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     Endereco = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    Abertura = table.Column<DateTime>(type: "DATE", nullable: false),
-                    Fechamento = table.Column<DateTime>(type: "DATE", nullable: false),
+                    Abertura = table.Column<TimeSpan>(type: "TIME", nullable: false),
+                    Fechamento = table.Column<TimeSpan>(type: "TIME", nullable: false),
                     CNPJ = table.Column<string>(type: "CHAR(14)", nullable: false),
                     RazaoSocial = table.Column<string>(type: "VARCHAR(100)", nullable: false)
                 },
@@ -135,6 +135,7 @@ namespace webapi.Health_Clinic.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Texto = table.Column<string>(type: "TEXT", nullable: false),
+                    Exibe = table.Column<bool>(type: "BIT", nullable: false),
                     IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -174,13 +175,15 @@ namespace webapi.Health_Clinic.Migrations
                         column: x => x.IdMedico,
                         principalTable: "Medico",
                         principalColumn: "Id",
+
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Consulta_Paciente_IdPaciente",
                         column: x => x.IdPaciente,
                         principalTable: "Paciente",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.NoAction
+                        );
                 });
 
             migrationBuilder.CreateIndex(

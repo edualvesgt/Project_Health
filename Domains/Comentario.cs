@@ -13,6 +13,10 @@ namespace webapi.Health_Clinic.Domains
         [Required(ErrorMessage = "Comentario Obrigatorio")]
         public string? Texto { get; set; }
 
+        [Column(TypeName = "BIT")]
+        [Required(ErrorMessage = "Exibir Obrigatorio")]
+        public bool Exibe { get; set; }
+
 
         //Ref.Paciente
 

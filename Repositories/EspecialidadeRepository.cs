@@ -7,7 +7,15 @@ namespace webapi.Health_Clinic.Repositories
     {
         public void Create(Especialidade especialidade)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void Delete(Guid Id)

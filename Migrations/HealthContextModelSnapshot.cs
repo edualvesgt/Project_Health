@@ -28,8 +28,8 @@ namespace webapi.Health_Clinic.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Abertura")
-                        .HasColumnType("DATE");
+                    b.Property<TimeSpan>("Abertura")
+                        .HasColumnType("TIME");
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -39,8 +39,8 @@ namespace webapi.Health_Clinic.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.Property<DateTime>("Fechamento")
-                        .HasColumnType("DATE");
+                    b.Property<TimeSpan>("Fechamento")
+                        .HasColumnType("TIME");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -63,6 +63,9 @@ namespace webapi.Health_Clinic.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Exibe")
+                        .HasColumnType("BIT");
 
                     b.Property<Guid>("IdPaciente")
                         .HasColumnType("uniqueidentifier");

@@ -12,8 +12,8 @@ using webapi.Health_Clinic.Context;
 namespace webapi.Health_Clinic.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    [Migration("20230927120443_Bd")]
-    partial class Bd
+    [Migration("20230928112506_V1")]
+    partial class V1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,8 +31,8 @@ namespace webapi.Health_Clinic.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Abertura")
-                        .HasColumnType("DATE");
+                    b.Property<TimeSpan>("Abertura")
+                        .HasColumnType("TIME");
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -42,8 +42,8 @@ namespace webapi.Health_Clinic.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.Property<DateTime>("Fechamento")
-                        .HasColumnType("DATE");
+                    b.Property<TimeSpan>("Fechamento")
+                        .HasColumnType("TIME");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -66,6 +66,9 @@ namespace webapi.Health_Clinic.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Exibe")
+                        .HasColumnType("BIT");
 
                     b.Property<Guid>("IdPaciente")
                         .HasColumnType("uniqueidentifier");

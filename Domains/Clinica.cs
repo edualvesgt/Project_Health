@@ -22,15 +22,15 @@ namespace webapi.Health_Clinic.Domains
 
 
 
-        [Column(TypeName = "DATE")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Horario de Abertura da Clinica Obrigatorio")]
-        public DateTime Abertura { get; set; }
+        public TimeSpan Abertura { get; set; }
 
 
 
-        [Column(TypeName = "DATE")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Horario de fechamento da Clinica Obrigatorio")]
-        public DateTime Fechamento { get; set; }
+        public TimeSpan Fechamento { get; set; }
 
 
         [Column(TypeName = "CHAR(14)")]
