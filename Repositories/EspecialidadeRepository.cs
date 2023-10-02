@@ -63,7 +63,7 @@ namespace webapi.Health_Clinic.Repositories
         public void Update(Guid id, Especialidade especialidade)
         {
             Especialidade bus = _context.Especialidade.FirstOrDefault(x => x.Id == id)!;
-            bus.Especializacao = bus.Especializacao;
+            bus.Especializacao = especialidade.Especializacao;
 
             _context.Update(bus);
             _context.SaveChanges();
