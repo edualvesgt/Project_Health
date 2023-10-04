@@ -12,7 +12,7 @@ namespace webapi.Health_Clinic.Interfaces
 
         void Update(Guid id, Consulta consulta);
 
-        void Delete(Guid Id);
+        void Delete(Guid id);
 
         List<Consulta> ListByMedico(Guid id );
 

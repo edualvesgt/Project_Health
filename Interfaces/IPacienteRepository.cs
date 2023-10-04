@@ -12,6 +12,6 @@ namespace webapi.Health_Clinic.Interfaces
 
         void Update(Guid id, Paciente paciente);
 
-        void Delete(Guid Id);
+        void Delete(Guid id);
     }
 }

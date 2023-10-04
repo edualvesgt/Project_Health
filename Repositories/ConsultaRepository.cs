@@ -1,18 +1,30 @@
-﻿using webapi.Health_Clinic.Domains;
+﻿using webapi.Health_Clinic.Context;
+using webapi.Health_Clinic.Domains;
 using webapi.Health_Clinic.Interfaces;
 
 namespace webapi.Health_Clinic.Repositories
 {
     public class ConsultaRepository : IConsultaRepository
     {
+        private readonly HealthContext _context;
+
+        public ConsultaRepository()
+        {
+            _context = new HealthContext();
+        }
         public void Create(Consulta consulta)
         {
-            throw new NotImplementedException();
+            consulta.Id = Guid.NewGuid();
+            _context.Add(consulta);
+
+            _context.SaveChanges();
         }
 
-        public void Delete(Guid Id)
+        public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            Consulta del = _context.Consulta.Find(id)!;
+            _context.Remove(del);
+            _context.SaveChanges();
         }
 
         public List<Consulta> List()
