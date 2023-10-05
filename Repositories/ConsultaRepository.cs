@@ -29,7 +29,8 @@ namespace webapi.Health_Clinic.Repositories
 
         public List<Consulta> List()
         {
-            throw new NotImplementedException();
+            List<Consulta> list = _context.Consulta.ToList();
+            return list;
         }
 
         public List<Consulta> ListByMedico(Guid id)
